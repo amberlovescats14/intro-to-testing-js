@@ -76,10 +76,58 @@ describe(`sayHello`, ()=> {
         expect(typeof sayHello()).toBe('string')
     });
     it(`should return hello amber`, ()=> {
-        let name = 'amber'
-        expect(sayHello(name)).toBe('hello amber')
+        let name = 'Amber'
+        expect(sayHello(name)).toBe('Hello, Amber!')
     });
     it(`should never be undefined`, ()=> {
         expect(sayHello()).not.toBe(undefined)
+    });
+    it(`should say Hello World when passed true`, ()=> {
+        expect(sayHello(true)).toBe(`Hello, World!`)
     })
 })
+
+//@ isFive
+describe(`isFive`, ()=> {
+    it(`should be defined as a function`, () => {
+        expect(typeof isFive).toBe('function')
+    });
+    it(`should should return a boolean`, ()=> {
+        expect(typeof isFive()).toBe('boolean')
+    });
+    it(`should return true when passed 5`, ()=> {
+        let five = 5
+        expect(isFive(five)).toBe(true)
+    });
+    it(`should be able to read 5 as a string`, () => {
+        let five = '5'
+        expect(isFive(five)).toBe(true)
+    })
+})
+
+//@ isEven
+describe(`isEven`, ()=> {
+    it(`should be a defined function`, ()=> {
+        expect(typeof isEven).toBe('function')
+    });
+    it(`should return a boolean value`, ()=> {
+        expect(typeof isEven()).toBe('boolean')
+    });
+    it(`should return true when passed 2`, () => {
+        let num = 2
+        expect(isEven(num)).toBe(true)
+    });
+    it(`should return true when passed a negative even`, ()=> {
+        let num = -4
+        expect(isEven(num)).toBe(true)
+    });
+    it(`should return false when passed 3`, ()=> {
+        let num = 3
+        expect(isEven(num)).toBe(false)
+    });
+    it(`should return false when passed a string`, ()=> {
+        let str = "banana"
+        expect(isEven(str)).toBe(false)
+    })
+})
+

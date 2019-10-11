@@ -13,5 +13,11 @@ const isZero = num => parseFloat(num) === 0
 
 
 //@ say hello name
-const sayHello = name => `hello ${amber}`
+const sayHello = (name = 'World') => {
+    if(name === true || false)
+        if(typeof name !== 'string') return `Hello, World!`
+    return `Hello, ${name}!`
+}
 
+//@ isFive
+const isFive = number => number == 5;
