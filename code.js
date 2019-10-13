@@ -21,3 +21,6 @@ const sayHello = (name = 'World') => {
 
 //@ isFive
 const isFive = number => number == 5;
+
+//@ is even
+const isEven = (num = false) => parseFloat(num) % 2 == 0;

@@ -128,6 +128,28 @@ describe(`isEven`, ()=> {
     it(`should return false when passed a string`, ()=> {
         let str = "banana"
         expect(isEven(str)).toBe(false)
+    });
+    it(`should return true when passed a truthy even number`, ()=> {
+        let num = '8'
+        expect(isEven(num)).toBe(true)
+    });
+    it(`should return false with Infiniti`, ()=> {
+        let num = Infinity;
+        expect(isEven(num)).toBe(false)
+    });
+    it('should return false when passed a boolean', () =>  {
+        let bools = {
+            t : true,
+            f: false
+        }
+        expect(isEven(bools.f)).toBe(false)
+        expect(isEven(bools.t)).toBe(false)
+    });
+    it(`should return return false if undefined`, ()=> {
+        expect(isEven()).toBe(false)
     })
+    
 })
+
+
 
