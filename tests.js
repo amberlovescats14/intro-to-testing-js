@@ -151,5 +151,44 @@ describe(`isEven`, ()=> {
     
 })
 
+describe(`isVowel`, ()=> {
+    it(`should be defined as a function`, ()=> {
+        expect(typeof isVowel).toBe('function')
+    });
+    it(`should always return a boolean`, ()=> {
+        expect(typeof isVowel()).toBe('boolean')
+    });
+    it(`should return true when passed capital or lowercase 'A'`, ()=> {
+        let lower = 'a'
+        let upper = 'A'
+        expect(isVowel(upper)).toBe(true)
+        expect(isVowel(lower)).toBe(true)
+    
+    });
+    it(`shoudld return false when passed 'y'`, ()=> {
+        let letter = 'y'
+        expect(isVowel(letter)).toBe(false)
+    });
+    it(`should return false when passed a number`, ()=> {
+        let num = 4;
+        expect(isVowel(num)).toBe(false)
+    });
+    it(`should return false when passed a boolean`, ()=> {
+        let bools = {
+            t: true,
+            f: false
+        }
+        expect(isVowel(bools.t)).toBe(false)
+        expect(isVowel(bools.f)).toBe(false)
+    });
+    it(`shoudld return false when passed a string instead of char`, ()=> {
+        let string = 'bannana'
+        expect(isVowel(string)).toBe(false)
+    });
+    it(`should return false if variable is undefined`, ()=> {
+        expect(isVowel()).toBe(false)
+    })
+})
+
 
 
