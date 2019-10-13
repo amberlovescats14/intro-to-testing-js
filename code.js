@@ -28,7 +28,6 @@ const isEven = (num = false) => parseFloat(num) % 2 == 0;
 //@ isVowel
 const isVowel = char => {
     let letter = typeof char === 'string' ? char.toLowerCase() : ''
-    console.log(letter)
     switch(letter){
         case 'a':
         case 'e':
