@@ -190,5 +190,31 @@ describe(`isVowel`, ()=> {
     })
 })
 
+describe(`add`, ()=> {
+    it(`should be a function`, ()=> {
+        expect(typeof add).toBe('function')
+    });
+    it(`should return a number`, ()=> {
+        expect(typeof add()).toBe('number')
+    });
+    it(`should add two numbers`, ()=> {
+        expect(add(2,3)).toBe(5)
+        expect(add(-3, -9)).toBe(-12)
+    
+    });
+    it(`should parse numbers`, ()=> {
+        expect(add('5', 6)).toBe(11)
+        expect(add('-4', '10')).toBe(6)
+    });
+    it(`should return NaN if not able to parse`, ()=> {
+        expect(add('banana', 'split')).toBeNaN()
+        expect(add(2, 'apples')).toBeNaN()
+    });
+    it(`should return NaN if undefined`, ()=> {
+        expect(add()).toBeNaN()
+    })
+
+})
+
 
 

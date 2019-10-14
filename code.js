@@ -37,3 +37,6 @@ const isVowel = char => {
         default: return false;
     }
 }
+
+//@ add
+const add = (a,b) => Number(a) + Number(b)
